@@ -11,6 +11,7 @@ import java.awt.Scrollbar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
+import java.awt.Color;
 
 public class HouseGUI extends JFrame {
 
@@ -39,6 +40,7 @@ public class HouseGUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 461, 414);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -49,9 +51,6 @@ public class HouseGUI extends JFrame {
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
-		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollPane.setRowHeaderView(scrollBar);
 		
 		House house1;
 		House house2;
@@ -77,9 +76,10 @@ public class HouseGUI extends JFrame {
 		System.out.println("Storleken på hus 2 är " + houseSize3);
 		System.out.println("Hus 3 är byggt år " + houseYear3);
 		
-		textArea.append("Hus 1 är byggt å " + houseYear + "och är " + houseSize + "kvm stort");
-		textArea.append("Hus 2 är byggt å " + houseYear2 + "och är " + houseSize2 + "kvm stort");
-		textArea.append("Hus 3 är byggt å " + houseYear3 + "och är " + houseSize3 + "kvm stort");
+		textArea.append("Uppgift 1.2" + "\n");
+		textArea.append("Hus 1 är byggt år " + houseYear + " och är " + houseSize + " kvm stort" + "\n");
+		textArea.append("Hus 2 är byggt år " + houseYear2 + " och är " + houseSize2 + " kvm stort" + "\n");
+		textArea.append("Hus 3 är byggt år " + houseYear3 + " och är " + houseSize3 + " kvm stort" + "\n");
 		
 		
 		House[] myHouses = new House[10];
@@ -95,24 +95,32 @@ public class HouseGUI extends JFrame {
 		myHouses[8] = new House(1995, 350);
 		myHouses[9] = new House(1950, 290);
 		
+		textArea.append("Uppgift 1.3" + "\n");
+		
 		for(int i = 0; i < myHouses.length; i++){
-			textArea.append("Huset är byggt år " + myHouses[i].getYearBuilt() + "och är" + myHouses[i].getSize() + "kvm stort");
+			textArea.append("Huset är byggt år " + myHouses[i].getYearBuilt() + " och är " + myHouses[i].getSize() + " kvm stort" + "\n");
 		}
 		
 		ArrayList<House> myTown;
 		myTown = new ArrayList<House>();
 		int year;
 		int size;
-		Random rand = new Random(100);
+		Random rand = new Random();
 		year = rand.nextInt((2015 - 1800)+ 1) + 1800;
 		size = rand.nextInt((1000 - 10)+ 1) + 10;
 		
-		myTown.add(new House(year, size));
+		textArea.append("Uppgift 1.4" + "\n");
+		
+		for(int i = 0; i < 100; i++){
+			year = rand.nextInt((2015 - 1800)+ 1) + 1800;
+			size = rand.nextInt((1000 - 10)+ 1) + 10;
+			myTown.add(new House(year, size));
+		}
 		
 		for(House house : myTown){
-			house.getSize();
 			house.getYearBuilt();
-			textArea.append(String.valueOf(house.getYearBuilt()) + String.valueOf(house.getSize()) + "\n");
+			house.getSize();
+			textArea.append("Huset är byggt år " + String.valueOf(house.getYearBuilt()) + " och är " + String.valueOf(house.getSize()) + " kvm stort" + "\n");
 		}
 	}
 }
