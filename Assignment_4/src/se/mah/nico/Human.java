@@ -12,11 +12,16 @@ public class Human {
 		return this.name;
 	}
 	
-	public buyDog(Dog dog){
-		
+
+	public void buyDog(Dog dog){
+		this.dog = dog;
 	}
-	
+	/**checks if human owns a dog or not*/
 	public String getInfo(){
-		
+		if(dog != null){
+			return this.getName() + " Owns a dog called " + this.dog.getName().toString();
+		}else{
+			return this.getName() + " doesen't own a dog";
+		}
 	}
 }
