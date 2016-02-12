@@ -1,0 +1,23 @@
+public class House{
+
+ private int yearBuilt; 
+ private int size;
+ //b)instansvariabler
+
+ private final int minSize = 10;
+
+ public House(int yearBuilt,int size){
+ //a)konstruktorn
+ }
+ public int getYearBuilt(){
+ //c)instansmetod
+ }
+ public int getSize(){
+ //c)instansmetod
+ }
+}
+
+
+d) Final betyder att man inte kan ärva från den och att den är slutgiltlig.
+e) Om koddelen är deklarerad public kan den nås utanför klassen och om den 
+är private kan den bara nås inom klassen.
