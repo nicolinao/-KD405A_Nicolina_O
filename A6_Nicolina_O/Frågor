@@ -1,0 +1,8 @@
+1. Mellan Malmö C - Lund C.
+2. Om man skriver &NoOf=5.
+3. <Journeys> beskriver alla resor mellan Malmö och Lund. 
+<Journey> är en specifik resa mellan Malmö och Lund.
+<RouteLinks> håller alla routeLink.
+<RouteLink> beskriver all information om en resa, avgångstid och datum och ankomsttid, priszon etc.
+4. <NoOfChanges></NoOfChanges> i <Journey>
+5. TravelMinutes finns inte med.
